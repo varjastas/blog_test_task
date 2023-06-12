@@ -1,0 +1,9 @@
+django
+djangorestframework
+sorl-thumbnail
+django-ckeditor
+django-cors-headers
+faker
+pillow
+psycopg2
+psycopg2-binary

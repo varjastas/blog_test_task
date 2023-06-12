@@ -1,0 +1,28 @@
+image: python:3.11
+
+services:
+  - postgres:latest
+
+variables:
+  POSTGRES_DB: myblogdb
+  POSTGRES_USER: mybloguser
+  POSTGRES_PASSWORD: mybloguser
+
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+    - apt-get update -qy && apt-get install -y python3-dev default-libmysqlclient-dev build-essential
+    - python -m venv venv
+    - source venv/bin/activate
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+    - python manage.py makemigrations
+    - python manage.py migrate
+    - python generate_fixtures.py
+    - python manage.py test
+  artifacts:
+    paths:
+      - media/

@@ -1,0 +1,13 @@
+﻿blogapp/__pycache__
+blogapp/migrations/__pycache__
+blogproject/__pycache__
+blogapp/migrations
+fixtures/tags.json
+fixtures/blogs.json
+Pipfile.lock
+Pipfile
+__pycache__
+media/full_images/*
+!media/full_images/.gitkeep
+media/thumbnails/*
+!media/thumbnails/.gitkeep

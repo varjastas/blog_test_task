@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: myblogdb
+      POSTGRES_USER: mybloguser
+      POSTGRES_PASSWORD: mybloguser
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    entrypoint: ["/code/entrypoint.sh"]
+    environment:
+      POSTGRES_DB: myblogdb
+      POSTGRES_USER: mybloguser
+      POSTGRES_PASSWORD: mybloguser
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
