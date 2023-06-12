@@ -8,7 +8,10 @@ Blog contains 3 pages:
 How to run server using Docker:
 1. Download docker, start it
 2. In project directory run command: docker-compose up --build
-
+3. You can access admin page by pregenerated admin account. 
+    login is admin
+    password is adminpassword  
+    
 Tests are running on gitlab: https://gitlab.com/ctanislavkrohmal2/blog_test_task
 
 You can access api by these endpoints:
